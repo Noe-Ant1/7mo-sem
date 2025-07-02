@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con JS</title>
+    <link rel="stylesheet" href="./estilos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+
+        <main>
+            <h3>Calculadora</h3>
+            <div class="calculadora">
+                <br>
+                <div class="input">
+                    <input type="text" id="input">
+                </div>
+                <br>
+                <div class="buttons">
+                    <button onclick="agregarInput('7')">7</button>
+                    <button onclick="agregarInput('8')">8</button>
+                    <button onclick="agregarInput('9')">9</button>
+                    <button onclick="agregarInput('/')">/</button>
+                    <button onclick="agregarInput('4')">4</button>
+                    <button onclick="agregarInput('5')">5</button>
+                    <button onclick="agregarInput('6')">6</button>
+                    <button onclick="agregarInput('*')">x</button>
+                    <button onclick="agregarInput('1')">1</button>
+                    <button onclick="agregarInput('2')">2</button>
+                    <button onclick="agregarInput('3')">3</button>
+                    <button onclick="agregarInput('-')">-</button>
+                    <button onclick="agregarInput('0')">0</button>
+                    <button onclick="agregarInput('.')">.</button>
+                    <button onclick="calcular()">=</button>
+                    <button onclick="agregarInput('+')">+</button>
+
+                    <button class="borrar" onclick="borrarInput()">BORRAR</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Código en JavaScript
+        let input = document.getElementById('input');
+
+        function agregarInput(value) {
+            input.value += value;
+        }
+
+        function borrarInput() {
+            input.value = '';
+        }
+
+        function calcular() {
+            try {
+                input.value = eval(input.value);
+            } catch (error) {
+                input.value = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html>
